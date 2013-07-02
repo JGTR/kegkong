@@ -13,14 +13,20 @@ parity = SerialPort::NONE
 
 sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)
 
+data = []
+counter = 0
 
-
-while true
-  line = sp.gets
-  unless line.nil?
-    puts line
-    puts line.inspect
+while true do 
+  sp_char = sp.getc
+  if sp_char
+    printf("%c", sp_char)
   end
 end
+
+# def collect
+#   data.
+# end
+# data << line
+# counter += 1
 
 sp.close   
