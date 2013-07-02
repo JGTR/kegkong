@@ -19,6 +19,7 @@ while true
   line = sp.gets
   unless line.nil?
     puts line
+    puts line.inspect
   end
 end
 
