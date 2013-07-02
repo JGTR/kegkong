@@ -13,10 +13,7 @@ parity = SerialPort::NONE
 
 sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)
 
-#just read forever
- i =  sp.gets.chomp        # see note 2
 
-                          #see note 1
 
 while true
   line = sp.gets
