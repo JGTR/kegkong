@@ -21,7 +21,7 @@ while true do
   # if sp_char
   #   printf("%c", sp_char)
   # end
-  if sp_char? && sp_char.start_with?("pulses:")
+  if sp_char && sp_char.start_with?("pulses:")
     number = sp_char.split(":")[1]
     puts number
   end
