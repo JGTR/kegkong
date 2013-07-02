@@ -18,10 +18,15 @@ counter = 0
 
 while true do 
   sp_char = sp.getc
-  if sp_char
-    printf("%c", sp_char)
+  # if sp_char
+  #   printf("%c", sp_char)
+  # end
+  if sp_char.start_with?("pulses:")
+    number = sp_char.split(":")[1]
+    puts number
   end
 end
+
 
 # def collect
 #   data.
