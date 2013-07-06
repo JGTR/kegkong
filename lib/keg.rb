@@ -1,9 +1,10 @@
-class Keg < ActiveRecord::Base
- 
+require "sinatra/activerecord"
 
+class Keg < ActiveRecord::Base
+  
+  has_many :measurements
 
   def self.get_data(sp)
-
     while true do 
       sp_char = sp.getc
 
