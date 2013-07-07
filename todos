@@ -1,0 +1,44 @@
+Views
+  Style
+    - Twitter bootstrap
+    - Create layout
+    - Structure views
+  Graph
+    - Find graphing solution
+    - Implement graphs in Keg show view
+
+Model
+  - Designate only 1 active keg
+  - Other kegs are inactive
+  - Present keg becomes active via a reset
+  - Resets should take user to edit page to allow volume, beer_type changes
+
+Emailer
+  - Find mailing solution
+  - Allow subscriptions to the mailer
+
+Link to actual hardware
+  - Make sure data inputs from Arduino work
+  - Set-up raspberrypi server
+
+Logistics
+  - Keynote document
+  - Rehearse with team
+
+
+Structure of views
+
+Home
+  - Current keg (active)
+  - link_to reset keg
+History
+  - Shows list of all kegs in reverse order
+  - Each keg is clickable
+Show keg
+  - Graphs consumption pattern for the keg: y-axis is volume, x-axis is date-time in days
+Reset keg
+  - Asks for max_volume and beer_type
+  - Reset keg button creates the new keg object and redirects to home
+Subscribe
+  - Field for email or cell phone
+  - You have been subscribed!
