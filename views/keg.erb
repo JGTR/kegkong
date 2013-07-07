@@ -1,8 +1,16 @@
 <h2> This is the mighty KegKong! </h2>
 
+ <ul>
+<% @kegs.each do |keg| %>
+  <h3> "<%=keg.id%>. <%=keg.beer_type%> </h3>
+    <% keg.measurements.each do |measurement| %>
+      <li>"<%=measurement.id%>. Pulses: <%=measurement.pulses%>, Volume impact: <%= measurement.change_in_volume%>"</li>
+    <% end %>
+  <% end %>
+  </ul>
 
-# button to reset keg
+<%# button to reset keg
 # field with default value for keg volume
-# keg initialization takes value in that field as starting volume
+# keg initialization takes value in that field as starting volume%>
 
 
