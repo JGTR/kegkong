@@ -1,6 +1,9 @@
- <ul>
-  <h3> "<%=@keg.id%>. <%=@keg.beer_type%>, <%=@keg.check_volume%> out of <%=@keg.max_volume%> remaining</h3>
+ <h4>Keg id: <%=@keg.id%> </h4> 
+ <h4>Beer type: <%=@keg.beer_type%></h4>
+ <h4>Volume remaining: <%=@keg.check_volume%> out of <%=@keg.max_volume%></h4>
+ <h4>Measurements:</h4>
+ <ul> 
     <% @keg.measurements.each do |measurement| %>
-      <li>"<%=measurement.id%>. Pulses: <%=measurement.pulses%>, Volume impact: <%= measurement.change_in_volume%>"</li>
+      <li><%=measurement.id%>. Pulses: <%=measurement.pulses%>, Volume impact: <%= measurement.change_in_volume%></li>
     <% end %>
   </ul>

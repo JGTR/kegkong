@@ -1,11 +1,14 @@
-<h2> The keg is serving <%=@keg.beer_type%> </h2>
+<h2> KegKong's current status: </h2>
 
+<ul>
+  <li>Serving: <%=@keg.beer_type%> </li> 
+  <li>Volume remaining: <%=@keg.check_volume%> gallons out of <%=@keg.max_volume%></li>
+  <li><a href="/keg/<%=@keg.id %>">Click here to view keg </a></li>
+  <br>
+  <a href="/keg/reset"><button type="button" class="btn-large">Reset keg</button></a>
+</ul>
 
-<h3> "<%=@keg.id%>. <%=@keg.beer_type%>, <%=@keg.check_volume%> out of <%=@keg.max_volume%> remaining</h3>
-<a href="/keg/<%=@keg.id %>">Click here to view keg </a>
 
 <%# button to reset keg
 # field with default value for keg volume
 # keg initialization takes value in that field as starting volume%>
-
-

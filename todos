@@ -8,18 +8,24 @@ Views
     - Implement graphs in Keg show view
 
 Model
-  - Designate only 1 active keg
-  - Other kegs are inactive
-  - Present keg becomes active via a reset
-  - Resets should take user to edit page to allow volume, beer_type changes
+  Keg model
+    - Designate only 1 active keg
+    - Other kegs are inactive
+    - Present keg becomes active via a reset
+    - Resets should take user to edit page to allow volume, beer_type changes
+  New class: authenticated user
+    - Only authenticated user can reset keg
 
 Emailer
+  - Establish the threshold for emailing
   - Find mailing solution
   - Allow subscriptions to the mailer
+  - Enable authentication
 
 Link to actual hardware
+  - Get hose/ adapter from flow-meter into tap
   - Make sure data inputs from Arduino work
-  - Set-up raspberrypi server
+  - Set-up raspberrypi server / cover
 
 Logistics
   - Keynote document

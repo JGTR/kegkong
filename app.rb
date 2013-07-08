@@ -33,6 +33,12 @@ module KegKong
 
     get '/keg/:id' do 
       @keg = Keg.find(params[:id])
+      erb :show
+    end
+
+    get '/keg/reset' do
+      @keg = Keg.last
+      erb :reset
     end
 
   end

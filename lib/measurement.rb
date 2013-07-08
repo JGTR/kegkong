@@ -15,7 +15,8 @@ class Measurement < ActiveRecord::Base
 
   def self.get_data(keg)
     # while true do
-      # pulses = @sp.gets('#delimeter') 
+      # pulses = @sp.gets('#delimeter')
+      # Measurement.create(:pulses => pulses)
       Measurement.create(:pulses => 5600, :change_in_volume => convert_pulses, :keg_id => keg.id)
       Measurement.create(:pulses => 5600, :change_in_volume => convert_pulses, :keg_id => keg.id)
       Measurement.create(:pulses => 5600, :change_in_volume => convert_pulses, :keg_id => keg.id)
