@@ -1,0 +1,14 @@
+<h2> Keg hall of fame at the Flatiron School! </h2>
+
+ <ul>
+<% @kegs.each do |keg| %>
+  <li> "<%=keg.id%>. <%=keg.beer_type%>, <%=keg.check_volume%> out of <%=keg.max_volume%> remaining</li>
+  <li><a href="/keg/<%=keg.id %>">Click here to view keg </a></li>
+  <% end %>
+  </ul>
+
+<%# button to reset keg
+# field with default value for keg volume
+# keg initialization takes value in that field as starting volume%>
+
+

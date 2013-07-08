@@ -18,8 +18,21 @@ module KegKong
   class App < Sinatra::Application
 
     get '/' do
+      @keg = Keg.last
+      erb :home
+    end
+
+    get '/index' do
       @kegs = Keg.all
-      erb :keg
+      erb :index
+    end
+
+    get '/subscribe' do 
+      "Coming soon!"
+    end
+
+    get '/keg/:id' do 
+      @keg = Keg.find(params[:id])
     end
 
   end
