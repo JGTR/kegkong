@@ -1,4 +1,5 @@
 require "sinatra/activerecord"
+require "gmail_sender"
 
 class Keg < ActiveRecord::Base
   
@@ -14,6 +15,11 @@ class Keg < ActiveRecord::Base
       end
     end
     volume
+  end
+
+  def send_email
+    g = GmailSender.new("kegkongfis@gmail.com","grumpycat")
+    g.send(:to => ["jordan.trevino@gmail.com","joe.m.giralt@gmail.com", "gonzales.chris.a@gmail.com"], :subject => "Order a New Keg", :content => "Now Please. We Thirstaaaaay...")
   end
 
 end
