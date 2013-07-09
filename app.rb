@@ -9,9 +9,6 @@ Bundler.require
 
 set :database, "sqlite3:///database.db"
 
-kong_test = Keg.create(:beer_type => "Indio", :max_volume => "15.5")
-
-
 module KegKong
   
   class App < Sinatra::Application

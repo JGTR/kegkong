@@ -5,6 +5,7 @@
 require 'rubygems'
 require "serialport"
 require 'sqlite3'
+require_relative './lib/keg.rb'
 require 'debugger'
 
 db = SQLite3::Database.new "database.db"

@@ -10,7 +10,7 @@ class Keg < ActiveRecord::Base
     if self.measurements.size > 0
       self.measurements.each do |m|
         puts volume
-        volume = volume - m.change_in_volume.to_f
+        volume = volume - m.pulses/21198.296
         # puts m.change_in_volume.to_f
       end
     end
