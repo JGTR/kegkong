@@ -1,9 +1,15 @@
 #simplest ruby program to read from arduino serial, 
 #using the SerialPort gem
 #(http://rubygems.org/gems/serialport)
+
+I
 require 'rubygems'
 require "serialport"
-require 'debugger'
+require 'sqlite3'
+db = SQLite3::Database.new "database.db"
+# set :database, "sqlite3:///database.db"
+
+
 #params for serial port
 port_str = "/dev/ttyACM0"  #may be different for you
 baud_rate = 9600
@@ -17,21 +23,11 @@ data = []
 counter = 0
 
 while true do 
-  sp_char = sp.getc
-  # if sp_char
-  #   printf("%c", sp_char)
-  # end
-  if sp_char && sp_char.start_with?("pulses:")
-    number = sp_char.split(":")[1]
-    puts number
-  end
+ pulses = sp.gets("\r\n")
+ keg_id = db.execute("SELECT id FROM kegs ORDER BY ID DESC LIMIT 1;")
+ now = Time.now
+ db.execute("INSERT INTO measurements VALUES(null, :pulses, 2.0, :keg_id, null, null)", {:pulses => pulses, :keg_id => keg_id}) 
 end
 
-
-# def collect
-#   data.
-# end
-# data << line
-# counter += 1
 
 sp.close   

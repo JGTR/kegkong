@@ -25,6 +25,11 @@ class Keg < ActiveRecord::Base
 end
 
 
+  def self.convert_pulses
+    # converts pulses to gallons
+    #pulses / 21198.296
+    2
+  end
 
 
 

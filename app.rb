@@ -9,9 +9,8 @@ Bundler.require
 
 set :database, "sqlite3:///database.db"
 
-Measurement.open_port
 kong_test = Keg.create(:beer_type => "Indio", :max_volume => "15.5")
-Measurement.get_data(kong_test)
+
 
 module KegKong
   
@@ -40,7 +39,6 @@ module KegKong
       @keg = Keg.last
       erb :reset
     end
-
   end
 end
 

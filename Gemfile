@@ -7,6 +7,7 @@ gem 'rake'
 gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'gmail_sender'
+
 #gem => figure out mailing, bro!
 
 group :development do
