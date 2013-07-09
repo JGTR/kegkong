@@ -19,9 +19,12 @@ parity = SerialPort::NONE
 sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)
 
 while true do
- keg_id =  db.execute("SELECT id FROM kegs ORDER BY ID DESC LIMIT 1")[0][0]
- pulses = sp.gets("\r\n")
- db.execute("INSERT INTO measurements VALUES(null, :pulses, 2.0, :keg_id, null, null)", {:pulses => pulses, :keg_id => keg_id}) 
+   keg_id =  db.execute("SELECT id FROM kegs ORDER BY ID DESC LIMIT 1")[0][0]
+   pulses = sp.gets("\r\n").chomp.split(':')[1].to_i
+   
+   if pulses > 65 && pulses < 5600
+     db.execute("INSERT INTO measurements VALUES(null, :pulses, 2.0, :keg_id, null, null)", {:pulses => pulses, :keg_id => keg_id})  
+  end
 end
 
 
