@@ -27,14 +27,19 @@ module KegKong
       "Coming soon!"
     end
 
+    get '/reset' do
+      @keg = Keg.last
+      erb :reset
+    end
+
     get '/keg/:id' do 
       @keg = Keg.find(params[:id])
       erb :show
     end
 
-    get '/keg/reset' do
-      @keg = Keg.last
-      erb :reset
+    post '/keg/create' do
+      @keg = Keg.create(params[:keg])
+      redirect '/'
     end
   end
 end
