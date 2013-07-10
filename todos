@@ -1,35 +1,33 @@
+Pending changes:
+
+
 Views
   Style
-    - Twitter bootstrap
-    - Create layout
-    - Structure views
+    x- Twitter bootstrap
+    x- Create layout
+    x- Structure views
   Graph
-    - Find graphing solution
-    - Implement graphs in Keg show view
+    x- Find graphing solution
+    x- Implement graphs in Keg show view
 
 Model
   Keg model
-    - Designate only 1 active keg
-    - Other kegs are inactive
-    - Present keg becomes active via a reset
-    - Resets should take user to edit page to allow volume, beer_type changes
-  New class: authenticated user
-    - Only authenticated user can reset keg
+    x- Present keg becomes active via a reset
+    x- Resets should take user to edit page to allow volume, beer_type changes
 
 Emailer
-  - Establish the threshold for emailing
-  - Find mailing solution
-  - Allow subscriptions to the mailer
-  - Enable authentication
+  x- Establish the threshold for emailing
+  x- Find mailing solution
+  x- Allow subscriptions to the mailer
 
 Link to actual hardware
-  - Get hose/ adapter from flow-meter into tap
-  - Make sure data inputs from Arduino work
-  - Set-up raspberrypi server / cover
+  x- Get hose/ adapter from flow-meter into tap
+  x- Make sure data inputs from Arduino work
+  x- Set-up raspberrypi server / cover
 
 Logistics
-  - Keynote document
-  - Rehearse with team
+  x- Keynote document
+  x- Rehearse with team
 
 
 Structure of views

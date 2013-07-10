@@ -3,19 +3,18 @@ require "gmail_sender"
 
 class Keg < ActiveRecord::Base
   
-  attr_accessor :email_sent
-
   has_many :measurements, :dependent => :destroy
 
   def check_volume
     volume = self.max_volume.to_f
-    if self.measurements.size > 0
-      self.measurements.each do |m|
-        puts volume
-        volume = volume - m.pulses/21198.296
+    volume = volume - self.measurements.sum('change_in_volume')
+    # Previous code using iterator to arrive at current volume in Keg:
+    # if self.measurements.size > 0
+    #   self.measurements.each do |m|
+    #     volume = volume - m.pulses/21198.296
         # puts m.change_in_volume.to_f
-      end
-    end
+      #end
+    #end
     volume
   end
 

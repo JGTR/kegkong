@@ -1,12 +1,12 @@
 <h1>KegKong reset</h1>
 <form action="/keg/create" method="post">
-  <label for="beer_type"><%=Beer type:</label><br />
-  <input id="beer_type" name="post[title]" type="text" value="<%= @post.title %>" />
+  <label for="beer_type">Beer type:</label> <br/>
+  <input id="beer_type" name="keg[beer_type]" type="text" value="<%= @keg.beer_type %>" />
   <br />
 
-  <label for="post_body">Body:</label><br />
-  <textarea id="post_body" name="post[body]" rows="5"><%= @post.body %></textarea>
+  <label for="max_volume">keg volume:</label><br />
+  <input id="max_volume" name="keg[max_volume]" type="text" value="<%= @keg.max_volume%>"></input>
   <br />
 
-  <input type="submit" value="Edit Post" />
+  <input type="submit" value="Reset keg" />
 </form>   
