@@ -9,6 +9,28 @@
     		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5.1/leaflet.ie.css" />
 		<![endif]-->
 		<script src="http://cdn.leafletjs.com/leaflet-0.5/leaflet.js"></script>
+        <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['gauge']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['KegKong', 50],
+
+        ]);
+
+        var options = {
+          width: 400, height: 120,
+          redFrom: 90, redTo: 100,
+          yellowFrom:75, yellowTo: 90,
+          minorTicks: 5
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
 	</head>
 	<body>
 		<div class="container-fluid">
@@ -24,6 +46,7 @@
         <div class="offset1">
     		  <%= yield %>
         </div>
+        
     	</div>
 	</body>
 </html>

@@ -8,7 +8,8 @@ gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'gmail_sender'
 
-#gem => figure out mailing, bro!
+gem 'googlecharts', :require => "gchart"
+
 
 group :development do
   gem "shotgun"

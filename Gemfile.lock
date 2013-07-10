@@ -21,6 +21,7 @@ GEM
     bond (0.4.3)
     builder (3.1.4)
     gmail_sender (1.1.1)
+    googlecharts (1.6.8)
     i18n (0.6.4)
     minitest (4.7.5)
     multi_json (1.7.7)
@@ -65,6 +66,7 @@ PLATFORMS
 DEPENDENCIES
   activerecord
   gmail_sender
+  googlecharts
   rake
   serialport
   shotgun

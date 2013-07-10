@@ -19,6 +19,7 @@ parity = SerialPort::NONE
 
 sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)
 
+
 while true do
    keg_id =  db.execute("SELECT id FROM kegs ORDER BY ID DESC LIMIT 1")[0][0]
    pulses = sp.gets("\r\n").chomp.split(':')[1].to_i

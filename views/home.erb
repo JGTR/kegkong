@@ -8,7 +8,33 @@
   <a href="/keg/reset"><button type="button" class="btn-large">Reset keg</button></a>
 </ul>
 
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['gauge']});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['KegKong', <%=(@keg.check_volume/@keg.max_volume*100).to_i%>],
+        ]);
 
-<%# button to reset keg
-# field with default value for keg volume
-# keg initialization takes value in that field as starting volume%>
+        var options = {
+          width: 1200, height: 480,
+          greenFrom: 50, greenTo: 100,
+          redFrom: 0, redTo: 25,
+          yellowFrom:25, yellowTo: 50,
+          minorTicks: 5
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+
+<div id='chart_div'></div>
+<div style="margin-left:14%;"><strong>% of Keg Remaining</strong></div>
+
+
+ <!-- # button to reset keg
+ # field with default value for keg volume
+ # keg initialization takes value in that field as starting volume -->
