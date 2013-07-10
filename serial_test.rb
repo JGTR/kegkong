@@ -37,7 +37,7 @@ while true do
      # db.execute("INSERT INTO measurements VALUES(null, :pulses, 2.0, :keg_id, null, null)", {:pulses => pulses, :keg_id => keg_id})  
   end
 
-  if !Keg.last.email_sent && (Keg.last.check_volume < (Keg.last.max_volume * .90))
+  if !Keg.last.email_sent && (Keg.last.check_volume < (Keg.last.max_volume * 0.90))
   	Keg.last.send_email
   	Keg.last.email_sent = true
   end
