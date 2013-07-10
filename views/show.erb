@@ -13,7 +13,7 @@
       google.setOnLoadCallback(drawChart);
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
-          ['Year', 'Sales'],
+          ['Measurement', 'Change in volume'],
           <% @keg.measurements.each_with_index do |measurement, i|%>
           <% if i == @keg.measurements.size %>
           ['<%=measurement.id%>',  <%=measurement.change_in_volume.to_f%>]
@@ -24,8 +24,8 @@
         ]);
 
         var options = {
-          title: 'Company Performance',
-          hAxis: {title: 'Year',  titleTextStyle: {color: 'red'}}
+          title: 'Keg over time',
+          hAxis: {title: 'Measurements in gallons',  titleTextStyle: {color: 'red'}}
         };
 
         var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
