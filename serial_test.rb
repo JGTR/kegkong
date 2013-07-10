@@ -25,16 +25,23 @@ parity = SerialPort::NONE
 
 sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)
 
+Keg.last.email_sent = false
 
 while true do
    # keg_id = db.execute("SELECT id FROM kegs ORDER BY ID DESC LIMIT 1")[0][0]
    pulses = sp.gets("\r\n").chomp.split(':')[1].to_i
    
    if pulses > 70 && pulses < 8000
-     x = Keg.last.measurements.build(:pulses => pulses, :change_in_volume => pulses/21198.296)
-     x.save
+     measurement = Keg.last.measurements.build(:pulses => pulses, :change_in_volume => pulses/21198.296)
+     measurement.save
      # db.execute("INSERT INTO measurements VALUES(null, :pulses, 2.0, :keg_id, null, null)", {:pulses => pulses, :keg_id => keg_id})  
   end
+
+  if !Keg.last.email_sent && (Keg.last.check_volume < (Keg.last.max_volume * .90))
+  	Keg.last.send_email
+  	Keg.last.email_sent = true
+  end
+
 end
 
 sp.close   

@@ -14,7 +14,7 @@
       function drawChart() {
         var data = google.visualization.arrayToDataTable([
           ['Label', 'Value'],
-          ['KegKong', <%=(@keg.check_volume/@keg.max_volume*100).to_i%>],
+          ['KegKong', <%=((@keg.check_volume/@keg.max_volume)*100).to_i%>],
         ]);
 
         var options = {

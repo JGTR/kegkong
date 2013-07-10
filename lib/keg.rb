@@ -3,6 +3,8 @@ require "gmail_sender"
 
 class Keg < ActiveRecord::Base
   
+  attr_accessor :email_sent
+
   has_many :measurements, :dependent => :destroy
 
   def check_volume
