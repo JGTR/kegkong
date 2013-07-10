@@ -7,3 +7,31 @@
       <li><%=measurement.id%>. Pulses: <%=measurement.pulses%>, Volume impact: <%= measurement.change_in_volume%></li>
     <% end %>
   </ul>
+
+<script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Year', 'Sales'],
+          <% @keg.measurements.each_with_index do |measurement, i|%>
+          <% if i == @keg.measurements.size %>
+          ['<%=measurement.id%>',  <%=measurement.change_in_volume.to_f%>]
+          <% else %>
+          ['<%=measurement.id%>',  <%=measurement.change_in_volume.to_f%>],
+          <% end %>
+          <%end%>
+        ]);
+
+        var options = {
+          title: 'Company Performance',
+          hAxis: {title: 'Year',  titleTextStyle: {color: 'red'}}
+        };
+
+        var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+      }
+    </script>
+
+
+<div id="chart_div" style="width: 900px; height: 500px;"></div>
