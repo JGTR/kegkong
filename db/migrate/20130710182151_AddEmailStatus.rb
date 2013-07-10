@@ -1,9 +1,15 @@
 class Addemailstatus < ActiveRecord::Migration
+  
   def up
-  	add_column :kegs, :email_status :boolean
+  	change_table(:kegs) do |t|
+  		t.column :email_status, :boolean
+  	end 
   end
 
   def down
-  	remove_column :kegs, :email_status
+  	change_table(:kegs) do |t|
+  		t.remove :email_status
+  	end
   end
+
 end

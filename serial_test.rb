@@ -26,30 +26,31 @@ ActiveRecord::Base.establish_connection(
 
 # sp = SerialPort.new(port_str, baud_rate, data_bits, stop_bits, parity)
 
-Keg.last.email_sent = false
+keg = Keg.last
+keg.email_status = false
+keg.save
 
-# while true do
+while true do
    # keg_id = db.execute("SELECT id FROM kegs ORDER BY ID DESC LIMIT 1")[0][0]
    # pulses = sp.gets("\r\n").chomp.split(':')[1].to_i
-   pulses = 2000
-   if pulses > 70 && pulses < 8000
-     measurement = Keg.last.measurements.build(:pulses => pulses, :change_in_volume => pulses/21198.296)
-     measurement.save
-     # db.execute("INSERT INTO measurements VALUES(null, :pulses, 2.0, :keg_id, null, null)", {:pulses => pulses, :keg_id => keg_id})  
-  end
-
-  debugger
-
-  if !Keg.last.email_sent && (Keg.last.check_volume < (Keg.last.max_volume * 0.90))
-  	Keg.last.send_email
-  	Keg.last.email_sent = true
-  end
-
-  # if !Keg.last.email_sent && (Keg.last.check_volume < (Keg.last.max_volume * 0.90))
-  # 	Keg.last.send_email
-  # 	Keg.last.email_sent = true
+  #  pulses = 2000
+  #  if pulses > 70 && pulses < 8000
+  #    measurement = keg.measurements.build(:pulses => pulses, :change_in_volume => pulses/21198.296)
+  #    measurement.save
+  #    # db.execute("INSERT INTO measurements VALUES(null, :pulses, 2.0, :keg_id, null, null)", {:pulses => pulses, :keg_id => keg_id})  
   # end
 
-# end
+
+  if !keg.email_status && (keg.check_volume < (keg.max_volume * 1))
+  	keg.send_email
+  	keg.email_status = true
+  end
+
+  # if !Keg.last.email_status && (Keg.last.check_volume < (Keg.last.max_volume * 0.90))
+  # 	Keg.last.send_email
+  # 	Keg.last.email_status = true
+  # end
+
+end
 
 # sp.close   

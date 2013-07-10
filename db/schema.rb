@@ -10,13 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130706192337) do
+ActiveRecord::Schema.define(version: 20130710184747) do
 
   create_table "kegs", force: true do |t|
     t.string   "beer_type"
-    t.integer  "max_volume"
+    t.float    "max_volume"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.boolean  "email_status"
   end
 
   create_table "measurements", force: true do |t|
