@@ -4,7 +4,7 @@
 <div class = "well span4 kegvolume">
  <ul>
 <% @kegs.each do |keg| %>
-  <li> <%=keg.id%>. <%=keg.beer_type%>, <%=keg.check_volume%> out of <%=keg.max_volume%> remaining</li>
+  <li> <%=keg.id%>. <%=keg.beer_type%>, <%=keg.check_volume%> out of <%=keg.max_volume%> gal. remaining</li>
   <li><a href="/keg/<%=keg.id %>" style = "color: green;">Click here to view keg </a></li>
   <% end %>
   </ul>

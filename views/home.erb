@@ -3,7 +3,7 @@
 <h2> KegKong's Current Status: </h2>
 <ul>
   <li>Serving: <%=@keg.beer_type%> </li> 
-  <li>Volume Remaining: <%=@keg.check_volume%> gallons out of <%=@keg.max_volume%></li>
+  <li>Volume Remaining (gal.): <%=@keg.check_volume%> out of <%=@keg.max_volume%></li>
   <li><a href="/keg/<%=@keg.id %>" style="color:green">Click here to view keg </a></li>
   <br>
   <a href="/reset"><button type="button" class="btn-large">Reset Keg</button></a>

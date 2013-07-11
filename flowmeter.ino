@@ -1,7 +1,3 @@
-/*
-    Carriots.com
- Created: April 10, 2013
- */
 
 int flowPin = 2;    //flowmeter pin number
 int pulsesCounter = 0;

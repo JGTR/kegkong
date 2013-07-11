@@ -39,7 +39,7 @@ module KegKong
 
     post '/keg/create' do
       @keg = Keg.create(params[:keg])
-      redirect '/'
+      erb :temp404
     end
   end
 end

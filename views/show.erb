@@ -2,7 +2,7 @@
  
 <div class = "well span4 kegvolume">
  <h4>Beer Type: <%=@keg.beer_type%></h4>
- <h4>Volume Remaining: <%=@keg.check_volume%> out of <%=@keg.max_volume%></h4>
+ <h4>Volume Remaining (gal.): <%=@keg.check_volume%> out of <%=@keg.max_volume%></h4>
  <h4>Measurements:</h4>
  <ul> 
     <% @keg.measurements.each do |measurement| %>
