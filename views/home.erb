@@ -1,12 +1,13 @@
 
-<div class = "span5">
+<div class = "span6">
 <h2> KegKong's Current Status: </h2>
 <ul>
   <li>Serving: <%=@keg.beer_type%> </li> 
-  <li>Volume Remaining (gal.): <%=@keg.check_volume%> out of <%=@keg.max_volume%></li>
-  <li><a href="/keg/<%=@keg.id %>" style="color:green">Click here to view keg </a></li>
-  <br>
-  <a href="/reset"><button type="button" class="btn-large">Reset Keg</button></a>
+  <li>Volume Remaining (gal.): <%=@keg.check_volume%> out of <%=@keg.max_volume%></li><br>
+<!--   <a href="/keg/<%=@keg.id %>" style="color:green">View Keg </a>
+  <br><br> -->
+  <a href="/keg/<%=@keg.id %>"><button type="button" class="btn-large" style = "background-color:green; color: white">View Keg</button></a>
+  <a href="/reset"><button type="button" class="btn-large" style = "background-color:#C92b16; color: white">Reset Keg</button></a>
 </ul>
 </div>
 

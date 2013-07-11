@@ -1,13 +1,15 @@
-<h2> Keg Hall of Fame at the Flatiron School! </h2>
+<div class ="span8">
+  <h2> Keg Hall of Fame at the Flatiron School! </h2>
 
 
-<div class = "well span4 kegvolume">
- <ul>
-<% @kegs.each do |keg| %>
-  <li> <%=keg.id%>. <%=keg.beer_type%>, <%=keg.check_volume%> out of <%=keg.max_volume%> gal. remaining</li>
-  <li><a href="/keg/<%=keg.id %>" style = "color: green;">Click here to view keg </a></li>
-  <% end %>
-  </ul>
+  <div class = "well kegvolume">
+     <ul>
+    <% @kegs.each do |keg| %>
+      <li> <%=keg.id%>. <%=keg.beer_type%>, <%=(keg.check_volume/keg.max_volume*100).round(2)%>% gal. remaining</li>
+      <li><a href="/keg/<%=keg.id %>" style = "color: green;">Click here to view keg </a></li>
+      <% end %>
+      </ul>
+  </div>
 </div>
 <%# button to reset keg
 # field with default value for keg volume
