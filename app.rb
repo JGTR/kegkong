@@ -38,7 +38,7 @@ module KegKong
     end
 
     post '/keg/create' do
-      @keg = Keg.create(params[:keg])
+      # @keg = Keg.create(params[:keg])
       erb :temp404
     end
   end
