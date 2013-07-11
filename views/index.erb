@@ -1,5 +1,7 @@
 <h2> Keg hall of fame at the Flatiron School! </h2>
 
+<body background="http://built.flatironschool.com/assets/logo.png">
+
  <ul>
 <% @kegs.each do |keg| %>
   <li> "<%=keg.id%>. <%=keg.beer_type%>, <%=keg.check_volume%> out of <%=keg.max_volume%> remaining</li>
