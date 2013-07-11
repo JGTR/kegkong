@@ -5,13 +5,7 @@
  <h4>Measurements:</h4>
 </div>
 
-<div class = "well kegvolume span8">
- <ul> 
-    <% @keg.measurements.each do |measurement| %>
-      <li><%=measurement.id%>. Pulses: <%=measurement.pulses%>, Volume Impact: <%= measurement.change_in_volume%></li>
-    <% end %>
-  </ul>
-</div>
+
 
 
 
@@ -42,3 +36,11 @@
 
 
 <div id="chart_div" class = "span5" style="width: 675px; height: 375px;"></div>
+
+<div class = "well kegvolume span8" style="margin-top:5px">
+ <ul> 
+    <% @keg.measurements.each do |measurement| %>
+      <li><%=measurement.id%>. Pulses: <%=measurement.pulses%>, Volume Impact: <%= measurement.change_in_volume%></li>
+    <% end %>
+  </ul>
+</div>
