@@ -1,4 +1,6 @@
  <h4>Keg id: <%=@keg.id%> </h4> 
+ 
+<div class = "well span4 kegvolume">
  <h4>Beer type: <%=@keg.beer_type%></h4>
  <h4>Volume remaining: <%=@keg.check_volume%> out of <%=@keg.max_volume%></h4>
  <h4>Measurements:</h4>
@@ -7,6 +9,8 @@
       <li><%=measurement.id%>. Pulses: <%=measurement.pulses%>, Volume impact: <%= measurement.change_in_volume%></li>
     <% end %>
   </ul>
+</div>
+
 
 <script type="text/javascript">
       google.load("visualization", "1", {packages:["corechart"]});
@@ -34,4 +38,4 @@
     </script>
 
 
-<div id="chart_div" style="width: 900px; height: 500px;"></div>
+<div id="chart_div" class = "span1 " style="width: 675px; height: 375px;"></div>

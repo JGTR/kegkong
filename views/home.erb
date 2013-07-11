@@ -1,5 +1,6 @@
-<h2> KegKong's current status: </h2>
 
+<div class = "span5">
+<h2> KegKong's current status: </h2>
 <ul>
   <li>Serving: <%=@keg.beer_type%> </li> 
   <li>Volume remaining: <%=@keg.check_volume%> gallons out of <%=@keg.max_volume%></li>
@@ -7,6 +8,8 @@
   <br>
   <a href="/reset"><button type="button" class="btn-large">Reset keg</button></a>
 </ul>
+</div>
+
 
     <script type='text/javascript'>
       google.load('visualization', '1', {packages:['gauge']});
@@ -34,10 +37,10 @@
     
 
 
-
-<div id='chart_div'></div>
-<div style="margin-left:14%;"><strong>% of Keg Remaining</strong></div>
-
+<div class = "span5">
+  <div id='chart_div'></div>
+  <div style = "margin-left: 40%" class = "btn"><strong>% of Keg Remaining</strong></div>
+</div>
 
 
  <!-- # button to reset keg

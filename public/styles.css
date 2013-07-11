@@ -1,2 +1,7 @@
 /*for leaflet map*/
 #map { height: 400px; }
+
+.kegvolume {
+  height:500px;
+  overflow:scroll;
+}
