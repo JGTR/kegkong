@@ -37,14 +37,14 @@ while true do
      measurement = keg.measurements.build(:pulses => pulses, :change_in_volume => pulses/21198.296)
      measurement.save
      # db.execute("INSERT INTO measurements VALUES(null, :pulses, 2.0, :keg_id, null, null)", {:pulses => pulses, :keg_id => keg_id})  
-  end
+   end
 
 # shouldn't be here; should be a cron task
-  if !keg.email_status && (keg.check_volume < (keg.max_volume * 0.25))
-  	keg.send_email
-  	keg.email_status = true
-  	keg.save
-  end
+    if !keg.email_status && (keg.check_volume < (keg.max_volume * 0.25))
+    	keg.send_email
+    	keg.email_status = true
+    	keg.save
+    end
 end
 
 sp.close   
