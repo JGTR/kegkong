@@ -9,6 +9,7 @@ require "sinatra/activerecord"
 require_relative './lib/keg.rb'
 require_relative './lib/measurement.rb'
 require 'debugger'
+require "typhoeus"
 
 ActiveRecord::Base.establish_connection(
    :adapter   => 'sqlite3',
@@ -38,6 +39,9 @@ while true do
    if pulses > 70 && pulses < 8000
      measurement = keg.measurements.build(:pulses => pulses, :change_in_volume => pulses/21198.296)
      measurement.save
+
+     Typhoeus.post("http://www.kegkong.com/pendejo", body: { title: "test post", content: "this is my test"})
+
      # db.execute("INSERT INTO measurements VALUES(null, :pulses, 2.0, :keg_id, null, null)", {:pulses => pulses, :keg_id => keg_id})  
    end
 
