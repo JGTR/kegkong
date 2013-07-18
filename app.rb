@@ -7,7 +7,7 @@ end
 
 Bundler.require
 
-set :database, "pg:///database.db"
+set :database, "postgresql:///database.db"
 
 module KegKong
   
