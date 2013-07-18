@@ -1,13 +1,12 @@
 require 'rubygems'
 require 'bundler'
+require './environments'
 
 Dir.glob('./lib/*.rb') do |model|
   require model
 end
 
 Bundler.require
-
-set :database, "postgresql:///database.db"
 
 module KegKong
   
