@@ -11,10 +11,10 @@ require_relative './lib/measurement.rb'
 require 'debugger'
 require "typhoeus"
 
-ActiveRecord::Base.establish_connection(
-   :adapter   => 'sqlite3',
-   :database  => './database.db'
-)
+# ActiveRecord::Base.establish_connection(
+#    :adapter   => 'sqlite3',
+#    :database  => './database.db'
+# )
 
 # db = SQLite3::Database.new "database.db"
 
@@ -37,8 +37,8 @@ while true do
    # keg_id = db.execute("SELECT id FROM kegs ORDER BY ID DESC LIMIT 1")[0][0]
    pulses = sp.gets("\r\n").chomp.split(':')[1].to_i
    if pulses > 70 && pulses < 8000
-     measurement = keg.measurements.build(:pulses => pulses, :change_in_volume => pulses/21198.296)
-     measurement.save
+     # measurement = keg.measurements.build(:pulses => pulses, :change_in_volume => pulses/21198.296)
+     # measurement.save
 
      Typhoeus.post("http://www.kegkong.com/pendejo", body: { title: "test post", content: "this is my test"})
 
