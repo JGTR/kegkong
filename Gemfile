@@ -9,7 +9,6 @@ gem 'gmail_sender'
 
 gem 'googlecharts', :require => "gchart"
 
-
 group :development do
   gem "shotgun"
   gem "tux"
@@ -19,4 +18,5 @@ end
 
 group :production do
   gem 'pg'
+  gem "activerecord-postgresql-adapter"
 end
