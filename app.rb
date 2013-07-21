@@ -7,7 +7,13 @@ end
 
 Bundler.require
 
-# set :database, "sqlite3:///database.db"
+configure :development do
+  set :database, "sqlite3:///database.db"
+end
+
+configure :production do
+  set :database, "postgres://database.db"
+end
 
 module KegKong
   
