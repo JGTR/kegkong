@@ -10,7 +10,6 @@ gem 'typhoeus'
 
 gem 'googlecharts', :require => "gchart"
 
-
 group :development do
   gem "shotgun"
   gem "tux"
@@ -18,6 +17,8 @@ group :development do
   gem "sqlite3"
 end
 
+
 group :production do
-  gem "pg"
+  gem 'pg'
+  gem "activerecord-postgresql-adapter"
 end
