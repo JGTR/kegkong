@@ -12,7 +12,7 @@ configure :development do
 end
 
 configure :production do
-  set :database, "postgres://database.db"
+  set :database, "postgresql://database.db"
 end
 
 module KegKong
