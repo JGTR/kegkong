@@ -8,12 +8,11 @@ gem 'activerecord'
 gem 'sinatra-activerecord'
 gem 'gmail_sender'
 gem 'typhoeus'
-
+gem "tux"
 gem 'googlecharts', :require => "gchart"
 
 group :development do
   gem "shotgun"
-  gem "tux"
   gem "debugger"
   gem "sqlite3"
 end
