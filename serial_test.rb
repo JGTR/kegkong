@@ -35,7 +35,7 @@ while true do
 
    # keg_id = db.execute("SELECT id FROM kegs ORDER BY ID DESC LIMIT 1")[0][0]
    pulses = sp.gets("\r\n").chomp.split(':')[1].to_i
-   if pulses > 70 && pulses < 8000
+   if pulses > 300 && pulses < 8000
      measurement = keg.measurements.build(:pulses => pulses, :change_in_volume => pulses/21198.296)
      measurement.save
      # db.execute("INSERT INTO measurements VALUES(null, :pulses, 2.0, :keg_id, null, null)", {:pulses => pulses, :keg_id => keg_id})  
