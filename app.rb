@@ -7,7 +7,23 @@ end
 
 Bundler.require
 
-set :database, "sqlite3:///database.db"
+
+configure :development do
+  set :database, "sqlite3:///database.db"
+end
+
+configure :production do
+  db = URI.parse(ENV['DATABASE_URL'] || 'postgres://localhost/database.db')
+
+  ActiveRecord::Base.establish_connection(
+    :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
+    :host     => db.host,
+    :username => db.user,
+    :password => db.password,
+    :database => db.path[1..-1],
+    :encoding => 'utf8'
+  )
+end
 
 module KegKong
   
@@ -40,6 +56,12 @@ module KegKong
     post '/keg/create' do
       @keg = Keg.create(params[:keg])
       erb :temp404
+    end
+
+    post '/pendejo' do
+      @keg = Keg.last
+      measurement = @keg.measurements.build(:pulses => params[:body][:pulses], :change_in_volume => params[:body][:pulses]/21198.296)
+      measurement.save
     end
   end
 end

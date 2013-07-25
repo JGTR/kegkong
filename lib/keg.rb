@@ -20,7 +20,11 @@ class Keg < ActiveRecord::Base
 
   def send_email
     g = GmailSender.new("kegkongfis@gmail.com","grumpycat")
-    g.send(:to => ["jordan.trevino@gmail.com","joe.m.giralt@gmail.com", "gonzales.chris.a@gmail.com"], :subject => "Please Order a New Keg", :content => "Keg ID: #{self.id} \n Keg Name: #{self.beer_type} \n Keg Volume: #{self.check_volume} \n :) KegKong thirsty...")
+    g.send(:to => ["jordan.trevino@gmail.com",
+      "joe.m.giralt@gmail.com", 
+      "gonzales.chris.a@gmail.com"], 
+      :subject => "Please Order a New Keg", 
+      :content => "Keg ID: #{self.id} \n Keg Name: #{self.beer_type} \n Keg Volume: #{self.check_volume} \n :) KegKong thirsty...")
   end
 
 end
