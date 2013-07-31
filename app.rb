@@ -57,7 +57,7 @@ module KegKong
       @keg = Keg.create(params[:keg])
       erb :temp404
     end
-    get 'pendejo' do
+    get '/pendejo' do
       erb :home
     end
 
