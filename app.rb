@@ -63,7 +63,7 @@ module KegKong
 
     post '/pendejo' do
       @keg = Keg.last
-      measurement = @keg.measurements.build(:pulses => params[:pulses], :change_in_volume => params[:pulses]/21198.296)
+      measurement = @keg.measurements.build(:pulses => params[:pulses], :change_in_volume => params[:pulses].to_i/21198.296)
       measurement.save
       erb :home
     end
