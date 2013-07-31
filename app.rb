@@ -65,7 +65,8 @@ module KegKong
     end
 
     post '/pendejo' do
-      @keg = Keg.last
+      # @keg = Keg.last
+      pp request
       # measurement = @keg.measurements.build(:pulses => params[:pulses], :change_in_volume => params[:pulses].to_i/21198.296)
       # measurement.save
       "work done"
