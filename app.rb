@@ -66,10 +66,12 @@ module KegKong
 
     post '/pendejo' do
       # @keg = Keg.last
-      pp request
+      puts "blake is done with the post"
+      logger.info "blake is logging"
       # measurement = @keg.measurements.build(:pulses => params[:pulses], :change_in_volume => params[:pulses].to_i/21198.296)
       # measurement.save
-      "work done"
+      @request = request
+      erb :blake
     end
   end
 end
