@@ -57,11 +57,19 @@ module KegKong
       @keg = Keg.create(params[:keg])
       erb :temp404
     end
+    get '/pendejo' do
+      @keg = Keg.last
+      # measurement = @keg.measurements.build(:pulses => params[:pulses], :change_in_volume => params[:pulses].to_i/21198.296)
+      # measurement.save
+      "work done"
+    end
 
     post '/pendejo' do
-      @keg = Keg.last
-      measurement = @keg.measurements.build(:pulses => params[:body][:pulses], :change_in_volume => params[:body][:pulses]/21198.296)
-      measurement.save
+      # @keg = Keg.last
+      pp request
+      # measurement = @keg.measurements.build(:pulses => params[:pulses], :change_in_volume => params[:pulses].to_i/21198.296)
+      # measurement.save
+      "work done"
     end
   end
 end
