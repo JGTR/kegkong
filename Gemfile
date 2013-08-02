@@ -10,6 +10,7 @@ gem 'gmail_sender'
 gem 'typhoeus'
 gem "tux"
 gem 'googlecharts', :require => "gchart"
+gem 'faraday'
 
 group :development do
   gem "shotgun"
