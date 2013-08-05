@@ -43,7 +43,7 @@ while true do
 
      #Typhoeus.post("http://www.kegkong.com/pendejo", body: { title: "test post", content: "this is my test"})
      conn = Faraday.new(:url => 'http://www.kegkong.com')
-     conn.post("/pendejo", {:pulses => 500}) # blake sent me this code this moringing 8/1/13
+     conn.post("/pendejo", {:pulses => pulses, :change_in_volume => pulses/21198.296}) 
 
      # db.execute("INSERT INTO measurements VALUES(null, :pulses, 2.0, :keg_id, null, null)", {:pulses => pulses, :keg_id => keg_id})  
    end
