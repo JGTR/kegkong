@@ -13,6 +13,7 @@ gem 'googlecharts', :require => "gchart"
 
 gem 'httparty'
 gem 'faraday'
+
 group :development do
   gem "shotgun"
   gem "debugger"

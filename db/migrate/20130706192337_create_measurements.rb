@@ -1,4 +1,4 @@
-8exclass CreateMeasurements < ActiveRecord::Migration
+class CreateMeasurements < ActiveRecord::Migration
   def up
     create_table :measurements do |t|
       t.integer :pulses

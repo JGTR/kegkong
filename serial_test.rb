@@ -11,10 +11,10 @@ require_relative './lib/measurement.rb'
 require 'debugger'
 require "typhoeus"
 
-# ActiveRecord::Base.establish_connection(
-#    :adapter   => 'sqlite3',
-#    :database  => './database.db'
-# )
+ActiveRecord::Base.establish_connection(
+   :adapter   => 'sqlite3',
+   :database  => './database.db'
+)
 
 # db = SQLite3::Database.new "database.db"
 
@@ -32,7 +32,9 @@ keg.email_status = false
 keg.save
 
 while true do
-  keg = Keg.last
+  # keg = Keg.last
+  # conn.get("/pendejo", {:keg =>})
+
 
    # keg_id = db.execute("SELECT id FROM kegs ORDER BY ID DESC LIMIT 1")[0][0]
    pulses = sp.gets("\r\n").chomp.split(':')[1].to_i
@@ -49,11 +51,11 @@ while true do
    end
 
 # shouldn't be here; should be a cron task
-    if !keg.email_status && (keg.check_volume < (keg.max_volume * 0.25))
-    	keg.send_email
-    	keg.email_status = true
-    	keg.save
-    end
+    # if !keg.email_status && (keg.check_volume < (keg.max_volume * 0.25))
+    # 	keg.send_email
+    # 	keg.email_status = true
+    # 	keg.save
+    # end
 end
 
 sp.close   
