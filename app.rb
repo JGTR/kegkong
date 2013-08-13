@@ -65,7 +65,6 @@ module KegKong
 
 
     post '/pendejo' do
-      keg = Keg.last
       #keg.email_status = false
       @keg = Keg.last
       pulses = params[:pulses].to_i

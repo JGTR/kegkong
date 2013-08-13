@@ -4,6 +4,7 @@
 
 require 'rubygems'
 require "serialport"
+require 'faraday'
 
 
 #params for serial port
