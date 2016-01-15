@@ -19,6 +19,7 @@ class Keg < ActiveRecord::Base
   end
 
   def send_email
+    # Perhaps hide our emails ?????
     g = GmailSender.new("kegkongfis@gmail.com","grumpycat")
     g.send(:to => ["jordan.trevino@gmail.com",
       "joe.m.giralt@gmail.com", 
